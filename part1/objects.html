@@ -6,7 +6,7 @@
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="../bower_components/fabric/fabric.js"></script>
+<script src="../bower_components/fabric/dist/fabric.js"></script>
 <style type="text/css">  
 <!-- /*css*/
 
@@ -35,6 +35,7 @@ ctx.fillStyle = 'red';
 ctx.fillRect(100, 100, 20, 20);
 </script>
 
+aaa
 <canvas id="fabric_c" width="200" height="200"></canvas>
 <script>
 // fabric
@@ -43,10 +44,12 @@ var canvas = new fabric.Canvas('fabric_c');
 var rect = new fabric.Rect({
   left: 100,
   top: 100,
-  fill: 'red',
+  fill: 'blue',
   width: 20,
   height: 20
 });
+
+canvas.add(rect);
 </script>
 
 </body>
