@@ -1,4 +1,4 @@
-# fablicjs_tutorial
+# fabricjs_tutorial
 
 [fabric.js](http://fabricjs.com/)の[チュートリアル](http://fabricjs.com/articles/)をそのままやってみる。
 
