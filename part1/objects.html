@@ -53,5 +53,75 @@ var rect = new fabric.Rect({
 canvas.add(rect);
 </script>
 
+<h3>canvas api rotate</h3>
+<canvas id="canvas_api_rotate_c" width="200" height="200"></canvas>
+<script>
+// canvas api
+var canvasEl = document.getElementById('canvas_api_rotate_c');
+var ctx = canvasEl.getContext('2d');
+ctx.fillStyle = 'red';
+
+ctx.translate(100, 100);
+ctx.rotate(Math.PI / 180 * 45);
+ctx.fillRect(-10, -10, 20, 20);
+</script>
+
+<h3>fabric rotate</h3>
+<canvas id="fabric_rotate_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('fabric_rotate_c');
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  fill: 'blue',
+  width: 20,
+  height: 20,
+  angle: 45
+});
+
+canvas.add(rect);
+</script>
+
+<h3>canvas api move</h3>
+<canvas id="canvas_api_move_c" width="200" height="200"></canvas>
+<script>
+// canvas api
+var canvasEl = document.getElementById('canvas_api_move_c');
+var ctx = canvasEl.getContext('2d');
+ctx.fillStyle = 'red';
+
+ctx.strokeRect(100, 100, 20, 20);
+alert("push OK");
+ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+ctx.fillRect(20, 50, 20, 20);
+</script>
+
+<h3>fabric move</h3>
+<canvas id="fabric_move_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('fabric_move_c');
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  fill: 'blue',
+  width: 20,
+  height: 20,
+});
+
+canvas.add(rect);
+
+alert("push OK");
+
+rect.set({left: 20, top: 50});
+canvas.renderAll();
+
+</script>
+
+
+
 </body>
 </html>
