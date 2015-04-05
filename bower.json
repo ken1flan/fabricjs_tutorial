@@ -1,0 +1,23 @@
+{
+  "name": "fablicjs_tutorial",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ken1flan/fablicjs_tutorial",
+  "authors": [
+    "ken1flan <ken1flan@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

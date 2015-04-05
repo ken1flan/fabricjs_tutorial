@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://html5resetcss.googlecode.com/files/html5reset-1.6.1.css"  />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../bower_components/fabric/fabric.js"></script>
+<style type="text/css">  
+<!-- /*css*/
+
+-->
+</style>
+<script type="text/javascript"> 
+<!-- //javascript
+
+//-->
+</script>
+ 
+<title>Objects</title>
+</head>
+<body>
+why fabric?
+
+<canvas id="canvas_api_c" width="200" height="200"></canvas>
+<script>
+// canvas api
+var canvasEl = document.getElementById('canvas_api_c');
+
+var ctx = canvasEl.getContext('2d');
+
+ctx.fillStyle = 'red';
+
+ctx.fillRect(100, 100, 20, 20);
+</script>
+
+<canvas id="fabric_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('fabric_c');
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  fill: 'red',
+  width: 20,
+  height: 20
+});
+</script>
+
+</body>
+</html>
