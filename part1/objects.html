@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://html5resetcss.googlecode.com/files/html5reset-1.6.1.css"  />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../bower_components/fabric/dist/fabric.js"></script>
+<style type="text/css">  
+<!-- /*css*/
+canvas { border: solid 1px #aaa; }
+-->
+</style>
+<script type="text/javascript"> 
+<!-- //javascript
+
+//-->
+</script>
+ 
+<title>Objects</title>
+</head>
+<body>
+<h1>Objects</h1>
+
+<h2>circle and triangle</h2>
+<canvas id="objects_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('objects_c');
+
+var circle = new fabric.Circle({
+  radius: 20, fill: 'green', left: 100, top: 100
+  });
+
+var triangle = new fabric.Triangle({
+  width: 20, height: 30, fill: 'blue', left: 50, top: 50
+  });
+
+canvas.add(circle, triangle);
+</script>
+
+</body>
+</html>
