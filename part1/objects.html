@@ -40,5 +40,29 @@ var triangle = new fabric.Triangle({
 canvas.add(circle, triangle);
 </script>
 
+<h2>manupirating objects</h2>
+<canvas id="manupirating_objects_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('manupirating_objects_c');
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  width: 20,
+  height: 20
+  });
+
+canvas.add(rect);
+
+rect.set('fill', 'red');
+rect.set({strokeWidth: 5, stroke: 'rgba(100, 200, 200, 0.5)'});
+rect.set('angle', 15).set('flipY', true);
+
+canvas.renderAll();
+</script>
+
+
+
 </body>
 </html>
