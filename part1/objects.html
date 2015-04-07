@@ -62,6 +62,27 @@ rect.set('angle', 15).set('flipY', true);
 canvas.renderAll();
 </script>
 
+<h2>hierarchy and inheritance</h2>
+<canvas id="hierarchy_and_inheritance_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('hierarchy_and_inheritance_c');
+
+fabric.Object.prototype.getAncleInRadians = function () {
+  return this.getAngle() / 180 * Math.PI;
+};
+
+var rect = new fabric.Rect({ top: 100, left: 50, width: 20, height: 10, angle: 45 });
+console.log("radian: " + rect.getAncleInRadians());
+var circle = new fabric.Circle({top: 100, left: 100, angle: 30, radius: 10});
+console.log("radian: " + circle.getAncleInRadians());
+
+console.log("circle?" + (circle instanceof fabric.Circle));
+console.log("object?" + (circle instanceof fabric.Object));
+
+canvas.add(rect, circle);
+</script>
+
 
 
 </body>
