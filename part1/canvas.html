@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://html5resetcss.googlecode.com/files/html5reset-1.6.1.css"  />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../bower_components/fabric/dist/fabric.js"></script>
+<style type="text/css">  
+<!-- /*css*/
+canvas { border: solid 1px #aaa; }
+-->
+</style>
+<script type="text/javascript"> 
+<!-- //javascript
+
+//-->
+</script>
+ 
+<title>Canvas</title>
+</head>
+<body>
+<h1>Objects</h1>
+
+<h2>canvas</h2>
+<canvas id="canvas" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('canvas_c');
+
+var rect = new fabric.Rect();
+
+canvas.add(rect);
+
+console.log("rect: " + rect);
+console.log("item(0): " + canvas.item(0));
+console.log("objects: " + canvas.getObjects());
+
+canvas.remove(rect);
+console.log("objects: " + canvas.getObjects());
+
+</script>
+
+</body>
+</html>
