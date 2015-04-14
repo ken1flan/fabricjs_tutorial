@@ -21,10 +21,10 @@ canvas { border: solid 1px #aaa; }
 <title>Canvas</title>
 </head>
 <body>
-<h1>Objects</h1>
+<h1>Canvas</h1>
 
 <h2>canvas</h2>
-<canvas id="canvas" width="200" height="200"></canvas>
+<canvas id="canvas_c" width="200" height="200"></canvas>
 <script>
 // fabric
 var canvas = new fabric.Canvas('canvas_c');
@@ -39,6 +39,48 @@ console.log("objects: " + canvas.getObjects());
 
 canvas.remove(rect);
 console.log("objects: " + canvas.getObjects());
+
+</script>
+
+<h2>interactivity</h2>
+<canvas id="interactivity_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('interactivity_c');
+
+canvas.selection = true;  // disable group selection
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  width: 20,
+  height: 20,
+  fill: 'red'
+  });
+
+var circle = new fabric.Circle({top: 100, left: 100, angle: 30, radius: 10});
+
+rect.set('selectable', true);  // make object unselectable
+
+canvas.add(rect, circle);
+
+</script>
+
+<canvas id="interactivity2_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var staticCanvas = new fabric.StaticCanvas('interactivity2_c');
+
+canvas.selection = true;  // disable group selection
+
+staticCanvas.add(
+  new fabric.Rect({
+    left: 100,
+    top: 100,
+    width: 20,
+    height: 20,
+    fill: 'red'
+  }));
 
 </script>
 
