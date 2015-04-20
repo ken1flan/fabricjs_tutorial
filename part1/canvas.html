@@ -84,5 +84,22 @@ staticCanvas.add(
 
 </script>
 
+<h2>Images</h2>
+
+<canvas id="images_canvas" width="1000" height="1000"></canvas>
+<image src="images/akubi_cat.jpg" id="akubi_cat">
+<script>
+var imageCanvas = new fabric.Canvas("images_canvas");
+var imageElement = document.getElementById("akubi_cat");
+var imageInstance = new fabric.Image(imageElement, {
+  left: 100,
+  top: 100,
+  angle: 30,
+  opacity: 0.30
+});
+
+imageCanvas.add(imageInstance);
+</script>
+
 </body>
 </html>
