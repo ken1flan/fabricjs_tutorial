@@ -33,3 +33,14 @@ function display_select_bride_face () {
   $(".select_groom_face").hide();
   $(".select_bride_face").show();
 }
+
+function handleFileSelect(event) {
+  var files = event.target.files;
+
+  var output = [];
+
+  for (var i = 0, f; f = files[i]; i++){
+	  output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ')</li>');
+  }
+
+}
