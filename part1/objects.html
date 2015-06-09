@@ -9,7 +9,7 @@
 <script src="../bower_components/fabric/dist/fabric.js"></script>
 <style type="text/css">  
 <!-- /*css*/
-
+canvas { border: solid 1px #aaa; }
 -->
 </style>
 <script type="text/javascript"> 
@@ -21,36 +21,69 @@
 <title>Objects</title>
 </head>
 <body>
-why fabric?
+<h1>Objects</h1>
 
-<canvas id="canvas_api_c" width="200" height="200"></canvas>
-<script>
-// canvas api
-var canvasEl = document.getElementById('canvas_api_c');
-
-var ctx = canvasEl.getContext('2d');
-
-ctx.fillStyle = 'red';
-
-ctx.fillRect(100, 100, 20, 20);
-</script>
-
-aaa
-<canvas id="fabric_c" width="200" height="200"></canvas>
+<h2>circle and triangle</h2>
+<canvas id="objects_c" width="200" height="200"></canvas>
 <script>
 // fabric
-var canvas = new fabric.Canvas('fabric_c');
+var canvas = new fabric.Canvas('objects_c');
+
+var circle = new fabric.Circle({
+  radius: 20, fill: 'green', left: 100, top: 100
+  });
+
+var triangle = new fabric.Triangle({
+  width: 20, height: 30, fill: 'blue', left: 50, top: 50
+  });
+
+canvas.add(circle, triangle);
+</script>
+
+<h2>manupirating objects</h2>
+<canvas id="manupirating_objects_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('manupirating_objects_c');
 
 var rect = new fabric.Rect({
   left: 100,
   top: 100,
-  fill: 'blue',
   width: 20,
   height: 20
-});
+  });
 
 canvas.add(rect);
+
+rect.set('fill', 'red');
+rect.set({strokeWidth: 5, stroke: 'rgba(100, 200, 200, 0.5)'});
+rect.set('angle', 15).set('flipY', true);
+
+canvas.renderAll();
 </script>
+
+<h2>hierarchy and inheritance</h2>
+<canvas id="hierarchy_and_inheritance_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('hierarchy_and_inheritance_c');
+
+fabric.Object.prototype.getAncleInRadians = function () {
+  return this.getAngle() / 180 * Math.PI;
+};
+
+var rect = new fabric.Rect({ top: 100, left: 50, width: 20, height: 10, angle: 45 });
+console.log("radian: " + rect.getAncleInRadians());
+var circle = new fabric.Circle({top: 100, left: 100, angle: 30, radius: 10});
+console.log("radian: " + circle.getAncleInRadians());
+
+console.log("circle?" + (circle instanceof fabric.Circle));
+console.log("object?" + (circle instanceof fabric.Object));
+
+canvas.add(rect, circle);
+</script>
+
+
 
 </body>
 </html>

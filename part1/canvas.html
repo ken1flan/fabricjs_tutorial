@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://html5resetcss.googlecode.com/files/html5reset-1.6.1.css"  />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../bower_components/fabric/dist/fabric.js"></script>
+<style type="text/css">  
+<!-- /*css*/
+canvas { border: solid 1px #aaa; }
+-->
+</style>
+<script type="text/javascript"> 
+<!-- //javascript
+
+//-->
+</script>
+ 
+<title>Canvas</title>
+</head>
+<body>
+<h1>Canvas</h1>
+
+<h2>canvas</h2>
+<canvas id="canvas_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('canvas_c');
+
+var rect = new fabric.Rect();
+
+canvas.add(rect);
+
+console.log("rect: " + rect);
+console.log("item(0): " + canvas.item(0));
+console.log("objects: " + canvas.getObjects());
+
+canvas.remove(rect);
+console.log("objects: " + canvas.getObjects());
+
+</script>
+
+<h2>interactivity</h2>
+<canvas id="interactivity_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var canvas = new fabric.Canvas('interactivity_c');
+
+canvas.selection = true;  // disable group selection
+
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  width: 20,
+  height: 20,
+  fill: 'red'
+  });
+
+var circle = new fabric.Circle({top: 100, left: 100, angle: 30, radius: 10});
+
+rect.set('selectable', true);  // make object unselectable
+
+canvas.add(rect, circle);
+
+</script>
+
+<canvas id="interactivity2_c" width="200" height="200"></canvas>
+<script>
+// fabric
+var staticCanvas = new fabric.StaticCanvas('interactivity2_c');
+
+canvas.selection = true;  // disable group selection
+
+staticCanvas.add(
+  new fabric.Rect({
+    left: 100,
+    top: 100,
+    width: 20,
+    height: 20,
+    fill: 'red'
+  }));
+
+</script>
+
+<h2>Images</h2>
+
+<canvas id="images_canvas" width="1000" height="1000"></canvas>
+<image src="images/akubi_cat.jpg" id="akubi_cat">
+<script>
+var imageCanvas = new fabric.Canvas("images_canvas");
+var imageElement = document.getElementById("akubi_cat");
+var imageInstance = new fabric.Image(imageElement, {
+  left: 100,
+  top: 100,
+  angle: 30,
+  opacity: 0.30
+});
+
+imageCanvas.add(imageInstance);
+</script>
+
+</body>
+</html>
